@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<title>Posthook!</title>
+	<link rel="stylesheet" href="index.css">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.1/css/bulma.min.css">
+	<script defer src='render.js'></script>
+</head>
+
+<body>
+	<div id='global-container' class='container'>
+		<div class='webhookProps'>
+			<h1>Identificadores del Webhook</h1>
+			<label class='label'>URL del Webhook</label>
+			<div>
+				<input id='webhookURL' class="input is-danger" type="text" placeholder="URL" onkeyup="checkEmpty()"
+					onfocus="checkEmpty()">
+			</div>
+		</div>
+
+		<h1>Propiedades del Embed</h1>
+		<div class="field">
+			<label class="label">Menciones o mensaje normal</label>
+			<div class="control">
+				<input id='content' class="input" type="text" placeholder="@everyone @here">
+			</div>
+		</div>
+		<div class="field">
+			<label class="label">Título</label>
+			<div class="control">
+				<input id='title' class="input" type="text" placeholder="Titulo">
+			</div>
+		</div>
+		<div class="field">
+			<label class="label">Color de la barra lateral</label>
+			<div class="control">
+				<input id='color' class="input" type="color" placeholder="color">
+			</div>
+		</div>
+		<div class="field">
+			<label class="label">Mensaje</label>
+			<div class="control">
+				<textarea id='description' class="textarea" placeholder="Mensaje"></textarea>
+			</div>
+		</div>
+		<div class="field">
+			<label class="label">Pié</label>
+			<div class="control">
+				<input id='footer' class="input" type="text" placeholder="Texto">
+			</div>
+		</div>
+
+		<div class="field">
+			<label class="label">Imagen grande (URL)</label>
+			<div class="control">
+				<input id='image' class="input is-link" type="text" placeholder="Link input">
+			</div>
+		</div>
+
+		<div class="field">
+			<label class="label">Imagen pequeña (URL)</label>
+			<div class="control">
+				<input id='thumbnail' class="input is-link" type="text" placeholder="Link input">
+			</div>
+		</div>
+
+		<div class="button is-info" onclick="post()">Enviar</div>
+	</div>
+</body>
+
+</html>
