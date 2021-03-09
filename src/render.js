@@ -23,7 +23,7 @@ async function post() {
 		return;
 
 	const webhookURL = document.getElementById('webhookURL').value;
-	const embedcolor = document.getElementById('color').value || 0x00ff00;
+	const embedcolor = document.getElementById('color').value;
 	const embedtitle = document.getElementById('title').value;
 	const embeddescription = document.getElementById('description').value;
 	const embedfooter = document.getElementById('footer').value;
@@ -34,7 +34,7 @@ async function post() {
 		content: embedcontent,
 		embeds: [
 			{
-				color: Number(`0x${[...embedcolor].slice(1, embedcolor.length).join()}`),
+				color: parseInt(`0x${[...embedcolor].slice(1, embedcolor.length).join("")}`),
 				title: embedtitle,
 				description: embeddescription,
 				footer: {
